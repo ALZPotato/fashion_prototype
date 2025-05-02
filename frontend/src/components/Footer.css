@@ -1,0 +1,46 @@
+.app-footer {
+    background-color: #343a40; /* Màu nền tối cho footer */
+    color: #f8f9fa; /* Màu chữ sáng */
+    padding: 40px 0 20px; /* Khoảng đệm trên và dưới */
+    margin-top: auto; /* Đẩy footer xuống dưới nếu main-layout dùng flex */
+  }
+  
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grid linh hoạt */
+    gap: 30px; /* Khoảng cách giữa các cột */
+    margin-bottom: 30px;
+  }
+  
+  .footer-section h4 {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #ffffff;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-section a {
+    color: #adb5bd; /* Màu link trong footer */
+    transition: color 0.2s ease;
+  }
+  
+  .footer-section a:hover {
+    color: #ffffff; /* Màu link khi hover */
+  }
+  
+  .footer-section span { /* Style cho icon mạng xã hội tạm */
+    margin-right: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #495057; /* Đường kẻ phân cách */
+    font-size: 0.9em;
+    color: #adb5bd;
+  }

@@ -1,0 +1,46 @@
+.app-header {
+    background-color: #ffffff; /* Màu nền trắng */
+    padding: 15px 0;
+    border-bottom: 1px solid #e9ecef; /* Đường viền mỏng */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Bóng đổ nhẹ */
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between; /* Đẩy các phần tử ra xa nhau */
+    align-items: center; /* Căn giữa theo chiều dọc */
+  }
+  
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #007bff; /* Màu logo (ví dụ) */
+  }
+  
+  .main-nav ul {
+    display: flex;
+    gap: 20px; /* Khoảng cách giữa các mục menu */
+  }
+  
+  .main-nav a {
+    color: #495057;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  
+  .main-nav a:hover,
+  .main-nav a.active { /* Thêm class active sau này nếu cần */
+    color: #0056b3; /* Màu khi hover hoặc active */
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Khoảng cách giữa các icon */
+  }
+  
+  .header-actions span { /* Style cho các icon tạm */
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #6c757d;
+  }

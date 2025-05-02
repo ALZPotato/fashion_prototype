@@ -1,0 +1,27 @@
+.product-list-page h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .filter-sort-area {
+    /* Thêm style cho bộ lọc/sắp xếp sau */
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    text-align: right; /* Tạm để bên phải */
+  }
+  
+  /* Grid layout cho danh sách sản phẩm */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Tạo các cột linh hoạt, chiều rộng tối thiểu 220px */
+    gap: 25px; /* Khoảng cách giữa các sản phẩm */
+    margin-bottom: 30px;
+  }
+  
+  .pagination-area {
+    /* Thêm style cho phân trang sau */
+    text-align: center;
+    margin-top: 30px;
+  }

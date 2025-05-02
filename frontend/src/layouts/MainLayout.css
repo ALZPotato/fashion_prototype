@@ -1,0 +1,11 @@
+.main-layout {
+    display: flex; /* Sử dụng Flexbox */
+    flex-direction: column; /* Xếp các phần tử theo chiều dọc */
+    min-height: 100vh; /* Chiều cao tối thiểu bằng chiều cao màn hình */
+  }
+  
+  .main-content {
+    flex-grow: 1; /* Cho phép nội dung chính chiếm hết không gian còn lại */
+    padding-top: 20px; /* Khoảng đệm phía trên nội dung */
+    padding-bottom: 40px; /* Khoảng đệm phía dưới nội dung */
+  }

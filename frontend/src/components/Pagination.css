@@ -1,0 +1,51 @@
+.pagination-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    padding: 10px 0;
+    flex-wrap: wrap; /* Cho phép xuống dòng nếu không đủ chỗ */
+    gap: 5px; /* Khoảng cách giữa các nút */
+  }
+  
+  .page-item {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    color: #007bff;
+    padding: 8px 12px;
+    margin: 0 2px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    min-width: 36px; /* Chiều rộng tối thiểu */
+    text-align: center;
+  }
+  
+  .page-item:hover:not(:disabled):not(.active) {
+    background-color: #e9ecef;
+  }
+  
+  .page-item.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+    cursor: default;
+  }
+  
+  .page-item:disabled {
+    color: #6c757d;
+    cursor: not-allowed;
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+  }
+  
+  .ellipsis {
+    padding: 8px 5px;
+    color: #6c757d;
+    min-width: auto;
+  }
+  
+  .prev-next {
+      font-weight: 500;
+  }
