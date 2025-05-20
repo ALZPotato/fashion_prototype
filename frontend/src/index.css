@@ -1,4 +1,38 @@
-/* Reset cơ bản */
+/* frontend/src/index.css */
+
+/* 1. Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* 2. Định nghĩa CSS Variables (Biến màu sắc và font) */
+:root {
+  --color-background: #181818;
+  --color-surface: #2A2A2A;
+  --color-text-primary: #E0E0E0;
+  --color-text-secondary: #A0A0A0;
+  --color-accent: #C0A07B;
+  --color-border: #404040;
+  --color-error: #E57373;       /* Đỏ cho lỗi */
+  --color-error-bg: rgba(229, 115, 115, 0.15); /* Nền mờ cho thông báo lỗi */
+  --color-success: #81C784;     /* Xanh cho thành công */
+  --color-success-bg: rgba(129, 199, 132, 0.15); /* Nền mờ cho thông báo thành công */
+
+  --font-primary: 'Playfair Display', serif;
+  --font-secondary: 'Lato', sans-serif;
+
+  --header-height: 70px; /* Ví dụ chiều cao header */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+
+  --color-accent: #C0A07B;
+  --color-accent-rgb: 192, 160, 123;
+
+  --color-error: #E57373;
+  --color-error-rgb: 229, 115, 115;
+  --color-accent: #C0A07B;
+  --color-accent-rgb: 192, 160, 123;
+}
+
+/* 3. Reset CSS cơ bản */
 *,
 *::before,
 *::after {
@@ -7,55 +41,132 @@
   box-sizing: border-box;
 }
 
-/* Font chữ cơ bản cho toàn trang (thay bằng font bạn thích) */
+/* 4. Styles cho body */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  line-height: 1.6;
-  color: #333; /* Màu chữ mặc định */
-  background-color: #f8f9fa; /* Màu nền nhẹ */
+  font-family: var(--font-secondary);
+  line-height: 1.65; /* Tăng line-height một chút cho dễ đọc */
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px; /* Font size cơ bản */
 }
 
-/* Container chung để căn giữa nội dung và giới hạn chiều rộng */
-.container {
-  width: 90%;
-  max-width: 1200px; /* Giới hạn chiều rộng tối đa */
-  margin: 0 auto; /* Căn giữa container */
-  padding: 0 15px; /* Khoảng đệm hai bên */
+/* 5. Styles cho các thẻ HTML chung */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  color: var(--color-text-primary);
+  line-height: 1.3;
+  margin-bottom: 0.8em; /* Điều chỉnh margin bottom */
+  font-weight: 600; /* Tiêu đề thường đậm hơn */
 }
 
-/* Loại bỏ gạch chân cho Link của React Router */
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.5rem; }
+/* ... các heading khác nếu cần ... */
+
+p {
+  margin-bottom: 1rem;
+  color: var(--color-text-secondary); /* Đoạn văn dùng màu phụ */
+}
+
 a {
   text-decoration: none;
-  color: inherit; /* Kế thừa màu từ phần tử cha */
+  color: var(--color-accent);
+  transition: color 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
-/* Loại bỏ dấu chấm đầu dòng cho danh sách */
+a:hover {
+  color: var(--color-text-primary); /* Hoặc một sắc độ khác của accent */
+  opacity: 0.85;
+}
+
 ul {
   list-style: none;
 }
 
 img {
-  max-width: 100%; /* Đảm bảo ảnh không vượt quá container cha */
-  height: auto;    /* Giữ tỷ lệ ảnh */
-  display: block; /* Loại bỏ khoảng trống thừa dưới ảnh */
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 button {
   cursor: pointer;
-  font-family: inherit; /* Kế thừa font */
+  font-family: inherit;
   border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
+  padding: 10px 20px;
+  border-radius: var(--border-radius-sm);
+  font-weight: 500;
+  transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.1s ease;
 }
 
-/* Class tiện ích cho trạng thái loading và error */
-.loading, .error {
+button:active {
+    transform: scale(0.98); /* Hiệu ứng nhấn nút */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea {
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    padding: 12px 15px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    width: 100%;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(192, 160, 123, 0.2); /* Màu accent với alpha */
+}
+
+/* 6. Container chung */
+.container {
+  width: 90%;
+  max-width: 1140px; /* Giới hạn chiều rộng phổ biến */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* 7. Các lớp tiện ích cho thông báo (Dùng lại từ AuthForm.css nếu cần) */
+.error-message-global, .success-message-global { /* Đổi tên để tránh trùng */
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-radius: var(--border-radius-sm);
   text-align: center;
-  padding: 40px 15px;
-  font-size: 1.2em;
+  font-weight: 500;
 }
 
-.error {
-  color: #dc3545; /* Màu đỏ cho lỗi */
+.error-message-global {
+  color: var(--color-error);
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error);
+}
+
+.success-message-global {
+  color: var(--color-success);
+  background-color: var(--color-success-bg);
+  border: 1px solid var(--color-success);
+}
+
+/* Trạng thái loading toàn cục (nếu cần) */
+.page-loading-indicator {
+  text-align: center;
+  padding: 50px 15px;
+  font-size: 1.2em;
+  color: var(--color-text-secondary);
 }

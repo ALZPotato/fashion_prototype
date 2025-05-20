@@ -7,7 +7,7 @@ function HomePage() {
     <div className="home-page">
       <section className="hero-section">
         {/* Thay bằng ảnh banner đẹp sau */}
-        <img src="https://via.placeholder.com/1200x400.png?text=Hero+Banner+Thoi+Trang+Cong+So" alt="Thời trang công sở banner" />
+        <img src="/hero-banner-office-fashion.jpg" alt="Thời trang công sở banner" />
         <div className="hero-content">
           <h1>Phong Cách Chuyên Nghiệp, Tự Tin Tỏa Sáng</h1>
           <p>Khám phá bộ sưu tập mới nhất dành cho quý công sở.</p>

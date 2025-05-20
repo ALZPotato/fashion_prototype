@@ -1,55 +1,81 @@
+/* frontend/src/pages/HomePage.css */
+
 .home-page .hero-section {
-    position: relative; /* Để định vị nội dung */
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  
-  .home-page .hero-section img {
-    width: 100%;
-    max-height: 450px; /* Giới hạn chiều cao banner */
-    object-fit: cover; /* Cắt ảnh cho vừa, giữ tỷ lệ */
-  }
-  
-  .home-page .hero-content {
-    position: absolute; /* Đặt nội dung lên trên ảnh */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff; /* Màu chữ trên banner (cần đảm bảo tương phản với ảnh) */
-    background-color: rgba(0, 0, 0, 0.5); /* Nền mờ để chữ dễ đọc */
-    padding: 30px;
-    border-radius: 8px;
-  }
-  
-  .home-page .hero-content h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-  }
-  
-  .home-page .hero-content p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
-  }
-  
-  .home-page .cta-button {
-    display: inline-block;
-    background-color: #007bff;
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.2s ease;
-  }
-  
-  .home-page .cta-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .home-page .featured-categories {
-    text-align: center;
-    padding: 40px 0;
-  }
-  
-  .home-page .featured-categories h2 {
-    margin-bottom: 20px;
-  }
+  position: relative;
+  text-align: center;
+  margin-bottom: 60px; /* Tăng khoảng cách */
+  background-color: var(--color-surface); /* Nền cho section nếu ảnh không full width */
+}
+
+.home-page .hero-section img {
+  width: 100%;
+  max-height: 500px; /* Có thể tăng chiều cao banner */
+  object-fit: cover;
+  display: block; /* Đảm bảo không có khoảng trống thừa */
+}
+
+.home-page .hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-text-primary); /* Chữ chính trên banner */
+  background-color: rgba(0, 0, 0, 0.6); /* Nền đen mờ hơn chút */
+  padding: 30px 40px; /* Tăng padding */
+  border-radius: var(--border-radius-sm);
+  max-width: 90%; /* Giới hạn chiều rộng content trên banner */
+}
+
+.home-page .hero-content h1 {
+  font-family: var(--font-primary); /* Đảm bảo dùng font chính */
+  font-size: 2.8rem; /* Kích thước tùy chỉnh cho hero H1 */
+  margin-bottom: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.home-page .hero-content p {
+  font-family: var(--font-secondary);
+  font-size: 1.15rem; /* Kích thước tùy chỉnh */
+  margin-bottom: 25px;
+  color: var(--color-text-primary); /* Chữ sáng hơn trên nền mờ */
+  opacity: 0.9; /* Giảm độ chói của chữ phụ */
+}
+
+.home-page .cta-button {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-background); /* Chữ tối trên nền accent */
+  padding: 14px 30px; /* Nút to hơn */
+  border-radius: var(--border-radius-sm);
+  font-weight: 600; /* Đậm hơn */
+  font-family: var(--font-secondary); /* Có thể muốn font body cho nút */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.1s ease;
+}
+
+.home-page .cta-button:hover {
+  opacity: 0.85;
+}
+.home-page .cta-button:active {
+    transform: scale(0.98) translateY(0); /* Reset transform Y từ ProductCard nếu có */
+}
+
+
+.home-page .featured-categories {
+  text-align: center;
+  padding: 60px 0; /* Tăng padding */
+}
+
+.home-page .featured-categories h2 {
+  font-family: var(--font-primary);
+  font-size: 2rem; /* Kích thước tùy chỉnh */
+  margin-bottom: 30px;
+  color: var(--color-text-primary);
+}
+
+.home-page .featured-categories p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+}

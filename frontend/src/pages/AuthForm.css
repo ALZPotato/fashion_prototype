@@ -1,0 +1,148 @@
+/* frontend/src/pages/AuthForm.css */
+.auth-container {
+  max-width: 400px; /* Thu nhỏ form lại chút */
+  margin-top: 60px; /* Tăng margin top */
+  margin-bottom: 60px;
+  padding: 40px; /* Tăng padding */
+  background-color: var(--color-surface);
+  border-radius: var(--border-radius-md); /* Bo góc lớn hơn */
+  border: 1px solid var(--color-border);
+  /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); */ /* Có thể thêm bóng đổ tối nếu muốn */
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 30px; /* Tăng margin */
+  color: var(--color-text-primary);
+  font-family: var(--font-primary);
+  font-size: 2rem; /* Tăng size tiêu đề form */
+  font-weight: 500;
+}
+
+.auth-form .form-group {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+/* --- Floating Label Styles --- */
+.floating-label-group {
+  position: relative;
+}
+
+.floating-label-group label {
+  position: absolute;
+  top: 14px;
+  left: 15px;
+  font-size: 1rem; /* Kích thước label ban đầu */
+  color: var(--color-text-secondary);
+  pointer-events: none;
+  transition: all 0.15s ease-out;
+  background-color: var(--color-surface); /* Phải cùng màu nền input group để che border */
+  padding: 0 4px; /* Khoảng trống cho border input khi label di chuyển lên */
+  line-height: 1; /* Đảm bảo chiều cao label nhất quán */
+}
+
+.floating-label-group input:focus + label,
+.floating-label-group.has-value input + label {
+  top: -9px; /* Di chuyển label lên trên và nằm trên border */
+  left: 11px; /* Dịch vào chút */
+  font-size: 0.78rem; /* Thu nhỏ label */
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+/* Input styles đã có trong index.css, không cần định nghĩa lại ở đây trừ khi muốn override */
+/* .auth-form input[type="text"], ... */
+
+/* --- Password Toggle Icon Styles --- */
+.password-group { /* Đã có position: relative từ .form-group */
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%; /* Căn giữa theo chiều dọc của input */
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+  color: var(--color-text-secondary);
+  user-select: none;
+  padding: 5px; /* Để dễ click hơn */
+}
+
+.password-toggle .eye-icon {
+  font-size: 1.2rem;
+  display: flex; /* Giúp căn giữa tốt hơn nếu icon là SVG */
+  align-items: center;
+}
+
+.password-toggle:hover .eye-icon {
+    color: var(--color-accent);
+}
+/* Không cần ::after phức tạp nếu icon đã là ký tự unicode */
+
+/* Auth Button */
+.auth-button {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--color-accent);
+  color: var(--color-background); /* Chữ tối trên nền accent */
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: 1.05rem; /* Giảm chút */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.1s ease;
+  margin-top: 15px;
+}
+
+.auth-button:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.auth-button:disabled {
+    background-color: var(--color-text-secondary);
+    color: var(--color-surface);
+    opacity: 0.6; /* Tăng opacity khi disabled */
+    cursor: not-allowed;
+}
+
+/* Link dưới form */
+.auth-container p[style*="text-align: center"] {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+.auth-container p[style*="text-align: center"] a {
+    font-weight: 500; /* Link đăng ký/đăng nhập đậm hơn */
+}
+
+
+/* Message styles đã có trong index.css (error-message-global, success-message-global) */
+/* Chỉ cần đảm bảo component JSX sử dụng đúng class name đó */
+/* Ví dụ trong LoginPage/RegisterPage: */
+/* {error && <p className="error-message-global">{error}</p>} */
+/* {successMessage && <p className="success-message-global">{successMessage}</p>} */
+
+/* Hoặc nếu muốn style riêng cho AuthForm messages */
+.auth-form-message.error {
+    color: var(--color-error);
+    background-color: var(--color-error-bg);
+    border: 1px solid var(--color-error);
+    padding: 10px 15px;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.auth-form-message.success {
+    color: var(--color-success);
+    background-color: var(--color-success-bg);
+    border: 1px solid var(--color-success);
+    padding: 10px 15px;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+}
